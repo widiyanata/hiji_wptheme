@@ -1176,6 +1176,9 @@ article.post.hentry {
 	padding-top: 15px;
 	margin: -15px;
 }
+article.post.hentry img {
+	width: 100%;
+}
 
 .article-content {
     padding: 20px;
