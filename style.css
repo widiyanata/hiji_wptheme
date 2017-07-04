@@ -510,7 +510,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: #c5a47e;
 }
 
 a:hover,
@@ -1174,7 +1174,7 @@ article.post.hentry {
 	border-bottom: 1px solid #f5f5f5;
 	padding-bottom: 15px;
 	padding-top: 15px;
-	margin: -15px;
+	margin: -15px -15px 0 -15px;
 }
 article.post.hentry img {
 	width: 100%;

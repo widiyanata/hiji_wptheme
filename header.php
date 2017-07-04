@@ -61,6 +61,38 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hiji' ); ?></a>
 
+  <?php if ( is_front_page() && is_home() ) : ?>
+	<header id="masthead" class="site-header" role="banner">
+
+     <div class="layer"></div>
+     <div class="container">
+       <div class="site-branding">
+         <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo bloginfo('name'); ?></a></h3>
+         <div class="separator line-separator">♦</div>
+         <?php if ( function_exists('yoast_breadcrumb') ) {
+           yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+         } else {
+           if( !is_home() ) { custom_breadcrumbs(); };
+         } ?>
+         <h4><?php echo bloginfo('description'); ?></h4>
+         <?php
+         // $description = get_bloginfo( 'description', 'display' );
+         //
+         // global $wp_query;
+         // $cat =   get_the_category($wp_query->post->ID );
+         // echo $cat->name;
+         // if ( $description || is_customize_preview() ) : ?>
+            <!-- <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p> -->
+            <?php
+         // endif; ?>
+       </div><!-- .site-branding -->
+     </div>
+
+
+	</header><!-- #masthead -->
+
+  <?php endif; ?>
+
   <?php
   $page_id = get_queried_object_id();
   $post_thumbnail_id = get_post_thumbnail_id( $page_id );
@@ -68,7 +100,7 @@
 
   if ( !is_front_page() ) : ?>
 	<header id="masthead" class="site-header" role="banner"
-  style="background: url(<?php echo $bgimg; ?>) fixed center center; background-size:contain">
+    style="background: url(<?php echo $bgimg; ?>) fixed center center; background-size:contain">
     <!-- style="
     background: url(<?php echo $bgimg; ?>) fixed center center;
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(<?php echo $bgimg; ?>) no-repeat;

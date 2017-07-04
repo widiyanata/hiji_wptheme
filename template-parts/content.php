@@ -9,13 +9,17 @@
 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-		} else {
-			if ( !is_page() ) {?>
-				<img src="http://lorempixel.com/300/300/" alt="<?php the_title(); ?>">
-		<?php }
+		<?php
+		if ( is_home() ){
+			if ( has_post_thumbnail()  ) {
+				the_post_thumbnail();
+			} else {
+				if ( !is_page() ) {?>
+					<img src="http://lorempixel.com/300/300/" alt="<?php the_title(); ?>">
+			<?php }
+			}
 		} ?>
+
 		<div class="article-content">
 			<header class="entry-header">
 				<?php
