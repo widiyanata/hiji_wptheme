@@ -84,6 +84,11 @@
        <div class="site-branding">
          <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php wp_title(''); ?></a></h3>
          <div class="separator line-separator">♦</div>
+         <?php if ( function_exists('yoast_breadcrumb') ) {
+           yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+         } else {
+           if( !is_home() ) { custom_breadcrumbs(); };
+         } ?>
 
          <?php
          // $description = get_bloginfo( 'description', 'display' );
