@@ -1167,3 +1167,11 @@ input.search-submit {
     padding: 20px;
     background-color: #fff;
 }
+
+/*
+* Posts
+*/
+article.post.hentry {
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 15px;
+}
