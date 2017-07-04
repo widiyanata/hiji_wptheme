@@ -29,7 +29,7 @@ $contact_desc   = get_theme_mod('contact_desc', 'Contact Section Description');
                 </div>
                 <textarea class="form-control" id="message" name="cmessage" placeholder="Message" rows="5"></textarea>
                 <div class="button-get-started">
-                  <button class="btn btn-danger btn-fill btn-lg" type="submit" name="contact_us">Contact Us</button>
+                  <button class="btn btn-primary btn-fill btn-lg" type="submit" name="contact_us">Contact Us</button>
                 </div>
                 <!-- <input type="hidden" name="action" value="contact_form"> -->
               </form>
