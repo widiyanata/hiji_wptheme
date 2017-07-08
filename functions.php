@@ -10,6 +10,18 @@
 // Register Custom Navigation Walker
 require_once('inc/wp-bootstrap-navwalker/wp-bootstrap-navwalker.php');
 
+/*
+* Require File
+*/
+require_once( get_template_directory() . '/inc/widgets/test-widget.php' );
+
+// Register Widget
+// register test_widget widget
+function register_test_widget() {
+    register_widget( 'Test_Widget' );
+}
+add_action( 'widgets_init', 'register_test_widget' );
+
 if ( ! function_exists( 'hiji_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
