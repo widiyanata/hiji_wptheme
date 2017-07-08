@@ -2033,6 +2033,11 @@ a,
   border-color: white;
 }
 
+/* add padding top to .section header .container  */
+.section-header .container {
+    padding-top: 70px;
+}
+
 .section-header-small .parallax,
 .section-header-small .static-image {
   min-height: 50vh;
