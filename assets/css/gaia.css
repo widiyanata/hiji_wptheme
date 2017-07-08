@@ -952,7 +952,7 @@ a,
 }
 .section .title-area {
   max-width: 760px;
-  margin: 0 auto 70px;
+  margin: 0 auto;
   display: block;
   padding: 0 15px;
   text-align: center;
@@ -2760,9 +2760,9 @@ a,
     margin: 0;
   }
   .section-header .content h1 {
-    font-size: 4.5em;
+    font-size: 3em;
     letter-spacing: 0.07em;
-    line-height: 1.7;
+    line-height: 1;
   }
   .section-header .content h1 span {
     font-size: 1em;
