@@ -63,13 +63,14 @@
 
   <?php if ( is_front_page() && is_home() ) : ?>
 	<header id="masthead" class="site-header" role="banner">
-
      <div class="layer"></div>
      <div class="container">
        <div class="site-branding">
          <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo bloginfo('name'); ?></a></h3>
          <div class="separator line-separator">♦</div>
-         <?php if ( function_exists('yoast_breadcrumb') ) {
+         <?php
+         // Add Breadcrumbs, yoast if exist and default if not
+         if ( function_exists('yoast_breadcrumb') ) {
            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
          } else {
            if( !is_home() ) { custom_breadcrumbs(); };
