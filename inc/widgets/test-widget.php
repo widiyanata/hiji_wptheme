@@ -104,8 +104,9 @@ class Test_Widget extends WP_Widget {
  */
   public function update( $new_instance, $old_instance ) {
     // processes widget options on save
-    $instance = array();
+    $instance = $old_instance;
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+    $instance['category_test'] = absint( $new_instance['category_test'] );
 
 		return $instance;
   }
