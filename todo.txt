@@ -1,1 +1,1 @@
-# Create Widget to display posts by category to display in homepage
+# Create Widget to display posts by category to display in homepage => DONE
