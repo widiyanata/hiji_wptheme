@@ -1103,9 +1103,9 @@ object {
 	height: 500px;
 	position: relative;
 }
-.site-title a {
+.site-title, .site-title a {
 	color: #fff;
-	font-size: 2em;
+	font-size: 3rem;
 }
 .site-header:hover .layer {
     opacity: 0;

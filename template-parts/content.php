@@ -33,7 +33,7 @@
 					if ( is_single() ) :
 						the_title( '<h1 class="entry-title">', '</h1>' );
 						else :
-							the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 						endif;
 
 						if ( 'post' === get_post_type() ) : ?>
@@ -52,10 +52,12 @@
 
 			<div class="col-md-12">
 				<div class="article-content">
-
 					<div class="entry-content text-justify <?php echo ( !is_home()  ? '' : 'sr-only'); ?>">
 						<?php
-
+						/**
+						*	Display Excerpt in Home
+						*	and content in single page
+						*/
 						if ( is_single() ) {
 							the_content( sprintf(
 								/* translators: %s: Name of current post. */
@@ -75,7 +77,6 @@
 					<footer class="entry-footer">
 						<?php hiji_entry_footer(); ?>
 					</footer><!-- .entry-footer -->
-
 				</div>
 			</div>
 		</div>

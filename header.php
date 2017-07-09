@@ -66,7 +66,7 @@
      <div class="layer"></div>
      <div class="container">
        <div class="site-branding">
-         <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo bloginfo('name'); ?></a></h3>
+         <h3 class="site-title"><!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> --><?php echo bloginfo('name'); ?><!-- </a> --></h3>
          <div class="separator line-separator">♦</div>
          <?php
          // Add Breadcrumbs, yoast if exist and default if not
@@ -115,7 +115,7 @@
      <div class="layer"></div>
      <div class="container">
        <div class="site-branding">
-         <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php wp_title(''); ?></a></h3>
+         <h3 class="site-title"><!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> --><?php wp_title(''); //echo bloginfo('name'); ?><!-- </a> --></h3>
          <div class="separator line-separator">♦</div>
          <?php if ( function_exists('yoast_breadcrumb') ) {
            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
