@@ -17,6 +17,13 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="container">
+				<div class="row">
+					<?php if ( is_active_sidebar( 'before-post' ) ) : ?>
+				  	<div id="before-post" class="before-post-widget" role="complementary">
+				  		<?php dynamic_sidebar( 'before-post' ); ?>
+				  	</div><!-- #primary-sidebar -->
+				  <?php endif; ?>
+				</div>
  				<div class="row">
  					<div class="col-md-8">
 						<?php

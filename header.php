@@ -27,7 +27,7 @@
   <!-- <?php echo is_front_page() ? 'navbar-transparent  navbar-fixed-top' : '' ; ?> <?php echo is_front_page() ? 'color-on-scroll="200"' : '' ; ?> -->
  <nav class="navbar navbar-default navbar-transparent  navbar-fixed-top"  color-on-scroll="200">
    <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-    <div class="container">
+  <div class="container">
     <div class="navbar-header">
       <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
         <span class="sr-only">Toggle navigation</span>
@@ -43,21 +43,21 @@
         </a>
       <?php } ?>
     </div>
-      <?php
-          wp_nav_menu( array(
-              'menu'              => 'primary',
-              'theme_location'    => 'primary',
-              'depth'             => 2,
-              'container'         => 'div',
-              'container_class'   => 'collapse navbar-collapse',
-              'container_id'      => 'bs-example-navbar-collapse-1',
-              'menu_class'        => 'nav navbar-nav navbar-right navbar-uppercase',
-              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-              'walker'            => new wp_bootstrap_navwalker())
-          );
-      ?>
-    </div>
-  </nav>
+    <?php
+        wp_nav_menu( array(
+            'menu'              => 'primary',
+            'theme_location'    => 'primary',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'container_id'      => 'bs-example-navbar-collapse-1',
+            'menu_class'        => 'nav navbar-nav navbar-right navbar-uppercase',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker())
+        );
+    ?>
+  </div>
+</nav>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hiji' ); ?></a>
 
@@ -102,16 +102,6 @@
   if ( !is_front_page() ) : ?>
 	<header id="masthead" class="site-header" role="banner"
     style="background: url(<?php echo $bgimg; ?>) fixed center center; background-size:contain">
-    <!-- style="
-    background: url(<?php echo $bgimg; ?>) fixed center center;
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(<?php echo $bgimg; ?>) no-repeat;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65))), url(<?php echo $bgimg; ?>) no-repeat;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(<?php echo $bgimg; ?>) no-repeat;
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(<?php echo $bgimg; ?>) no-repeat;
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(<?php echo $bgimg; ?>) no-repeat;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.45) 100%), url(<?php echo $bgimg; ?>) no-repeat;
-    background-size: cover;
-     " -->
      <div class="layer"></div>
      <div class="container">
        <div class="site-branding">
@@ -138,5 +128,5 @@
 
 
 	</header><!-- #masthead -->
-
+  
   <?php endif; ?>

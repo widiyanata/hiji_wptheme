@@ -43,13 +43,21 @@ class Test_Widget extends WP_Widget {
     $query_posts = new WP_Query( apply_filters( 'ac_widget_cats_2col_query_filter', $query_args ) );
 
     if( $query_posts->have_posts()) : while ( $query_posts->have_posts() ) : $query_posts->the_post();
+    ?>
+    <ul>
+      <li>
+        <a href="#">
+          <?php if ( has_post_thumbnail() ) {
+            the_post_thumbnail();
+          } else { ?>
+            <img src="" alt="">
+          <?php } ?>
+          <p class="title"><?php the_title(); ?></p>
+        </a>
+      </li>
+    </ul>
 
-      // The Content
-      the_title();
-      if ( has_post_thumbnail() ) {
-        the_post_thumbnail();
-      }
-
+    <?php
       endwhile;
     endif;
 

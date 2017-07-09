@@ -13,16 +13,18 @@ require_once('inc/wp-bootstrap-navwalker/wp-bootstrap-navwalker.php');
 /*
 * Require File
 */
-require_once( get_template_directory() . '/inc/widgets/test-widget.php' );
+// require_once( get_template_directory() . '/inc/widgets/test-widget.php' );
+require_once( get_template_directory() . '/inc/widgets/category-widget.php' );
 
 /*
 *  Register Widget
 */
 // register test_widget widget
-function register_test_widget() {
-    register_widget( 'Test_Widget' );
+function register_hiji_widget() {
+    // register_widget( 'Test_Widget' );
+    register_widget( 'Hiji_Cat_Widget' );
 }
-add_action( 'widgets_init', 'register_test_widget' );
+add_action( 'widgets_init', 'register_hiji_widget' );
 
 if ( ! function_exists( 'hiji_setup' ) ) :
 /**
@@ -111,6 +113,15 @@ function hiji_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'hiji' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'hiji' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+  register_sidebar( array(
+		'name'          => esc_html__( 'Before Post', 'hiji' ),
+		'id'            => 'before-post',
 		'description'   => esc_html__( 'Add widgets here.', 'hiji' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
