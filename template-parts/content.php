@@ -9,52 +9,61 @@
 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-		if ( is_home() ){
-			if ( has_post_thumbnail()  ) {
-				the_post_thumbnail();
-			} else {
-				if ( !is_page() ) {?>
-					<img src="http://lorempixel.com/300/300/" alt="<?php the_title(); ?>">
-			<?php }
-			}
-		} ?>
-
-		<div class="article-content">
-			<header class="entry-header">
+		<div class="row">
+			<div class="col-md-4">
 				<?php
-				if ( is_single() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-					else :
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					endif;
+				if ( is_home() ){
+					if ( has_post_thumbnail()  ) {
+						the_post_thumbnail();
+					} else {
+						if ( !is_page() ) {?>
+							<img src="http://lorempixel.com/300/300/" alt="<?php the_title(); ?>">
+							<?php }
+						}
+					} ?>
+			</div>
+			<div class="col-md-8">
+				<div class="article-content">
+					<header class="entry-header">
+						<?php
+						if ( is_single() ) :
+							the_title( '<h1 class="entry-title">', '</h1>' );
+							else :
+								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							endif;
 
-					if ( 'post' === get_post_type() ) : ?>
-					<div class="entry-meta">
-						<?php hiji_posted_on(); ?>
-					</div><!-- .entry-meta -->
-					<?php
-				endif; ?>
-			</header><!-- .entry-header -->
+							if ( 'post' === get_post_type() ) : ?>
+							<div class="entry-meta">
+								<?php hiji_posted_on(); ?>
+							</div><!-- .entry-meta -->
+							<?php
+						endif; ?>
+					</header><!-- .entry-header -->
 
-			<div class="entry-content text-justify">
-				<?php
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'hiji' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					) );
+					<div class="entry-content text-justify">
+						<?php
 
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hiji' ),
-						'after'  => '</div>',
-						) );
-						?>
+						if ( is_single() ) {
+							the_content( sprintf(
+								/* translators: %s: Name of current post. */
+								wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'hiji' ), array( 'span' => array( 'class' => array() ) ) ),
+								the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								) );
+						} else {
+							the_excerpt();
+						}
+
+							wp_link_pages( array(
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hiji' ),
+								'after'  => '</div>',
+								) );
+								?>
 					</div><!-- .entry-content -->
-			<footer class="entry-footer">
+					<footer class="entry-footer">
 						<?php hiji_entry_footer(); ?>
 					</footer><!-- .entry-footer -->
 
+				</div>
+			</div>
 		</div>
-
 	</article><!-- #post-## -->

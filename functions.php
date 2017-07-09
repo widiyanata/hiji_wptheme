@@ -15,7 +15,9 @@ require_once('inc/wp-bootstrap-navwalker/wp-bootstrap-navwalker.php');
 */
 require_once( get_template_directory() . '/inc/widgets/test-widget.php' );
 
-// Register Widget
+/*
+*  Register Widget
+*/
 // register test_widget widget
 function register_test_widget() {
     register_widget( 'Test_Widget' );
@@ -385,6 +387,21 @@ function custom_breadcrumbs() {
     }
 
 }
+
+/**
+* Custom Excerpt
+*/
+// Changing excerpt length
+function new_excerpt_length($length) {
+  return 55;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+// Changing excerpt more
+function new_excerpt_more($more) {
+  return '<p><a href="'.get_the_permalink().'" rel="nofollow">'. __( 'Continue reading', 'hiji' ) .'....</a></p';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 /**
  * Implement the Custom Header feature.
