@@ -1107,6 +1107,10 @@ object {
 	color: #fff;
 	font-size: 2em;
 }
+.site-header:hover .layer {
+    opacity: 0;
+    transition: opacity ease .5s;
+}
 
 #masthead .container {
     z-index: 2;
